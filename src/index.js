@@ -96,6 +96,7 @@ function parseBasicAuth(request) {
 async function handleRequest(request) {
 	requireHttps(request);
 	console.log(request);
+	console.log(request.headers);
 	const { pathname } = new URL(request.url);
 
 	if (pathname === "/favicon.ico" || pathname === "/robots.txt") {
