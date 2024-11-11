@@ -111,6 +111,7 @@ async function handleRequest(request) {
 
 	const { username, password } = parseBasicAuth(request);
 	const url = new URL(request.url);
+	console.log(url)
 	const params = url.searchParams;
 
 	// duckdns uses ?token=
