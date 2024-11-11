@@ -95,6 +95,7 @@ function parseBasicAuth(request) {
 
 async function handleRequest(request) {
 	requireHttps(request);
+	console.log(request);
 	const { pathname } = new URL(request.url);
 
 	if (pathname === "/favicon.ico" || pathname === "/robots.txt") {
@@ -111,7 +112,6 @@ async function handleRequest(request) {
 
 	const { username, password } = parseBasicAuth(request);
 	const url = new URL(request.url);
-	console.log(url);
 	const params = url.searchParams;
 
 	// duckdns uses ?token=
