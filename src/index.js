@@ -125,7 +125,6 @@ async function handleRequest(request) {
 	// fallback to connecting IP address
 	const ipsParam = params.get("ips") || params.get("ip") || params.get("myip") || request.headers.get("Cf-Connecting-Ip");
    	const ips = ipsParam?.split(",");
-	console.log(ipsParam);
 
 	if (!hostnames || hostnames.length === 0 || !ips || ips.length === 0) {
 	        throw new BadRequestException("You must specify both hostname(s) and IP address(es)");
